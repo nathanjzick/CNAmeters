@@ -6,7 +6,6 @@ Returns:
 
 import os
 import cv2
-import pytesseract
 import numpy as np
 
 def do_work(img_path):
@@ -43,12 +42,7 @@ def do_work(img_path):
     img = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
 
     # save the filtered image in the output directory
-    save_path = os.path.join(output_path, file_name + ".jpg")
-    print(save_path)
+    save_path = os.path.join(output_path, file_name + ".png")
     cv2.imwrite(save_path, img)
-
-    # # Recognize text with tesseract for python
-    # result = pytesseract.image_to_string(img, lang="eng")
-    # return result
 
 do_work('C:\\Users\\plog1\\Documents\\Scripts\\CNAmeters\\file.tiff')
