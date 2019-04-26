@@ -9,7 +9,7 @@ import cv2
 import pytesseract
 import numpy as np
 
-def get_string(img_path):
+def do_work(img_path):
     """[Takes a raw image, processes it, and saves it to a output path called cleaned_images]
 
     Arguments:
@@ -23,7 +23,7 @@ def get_string(img_path):
     file_name = file_name.split()[0]
 
     # create a directory for outputs
-    output_path = os.path.join('cleaned_images\\', file_name)
+    output_path = 'cleaned_images\\'
     if not os.path.exists(output_path):
         os.makedirs(output_path)
 
@@ -44,10 +44,11 @@ def get_string(img_path):
 
     # save the filtered image in the output directory
     save_path = os.path.join(output_path, file_name + ".jpg")
+    print(save_path)
     cv2.imwrite(save_path, img)
 
     # # Recognize text with tesseract for python
     # result = pytesseract.image_to_string(img, lang="eng")
     # return result
 
-get_string('C:\\Users\\plog1\\Documents\\Scripts\\CNAmeters\\file.tiff')
+do_work('C:\\Users\\plog1\\Documents\\Scripts\\CNAmeters\\file.tiff')
