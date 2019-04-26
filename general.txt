@@ -1,0 +1,7 @@
+If the PDf is already indexed, use the tool at the following website.
+
+https://www.xpdfreader.com/pdftotext-man.html
+
+If the PDF is an image that isn't indexed, perform optical character recognition. Google's Tesseract is the tool to be used.
+
+https://opensource.google.com/projects/tesseract
