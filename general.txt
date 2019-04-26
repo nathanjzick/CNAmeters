@@ -1,7 +1,13 @@
-If the PDf is already indexed, use the tool at the following website.
+- If the PDf is already indexed, use the tool at the following website.
 
 https://www.xpdfreader.com/pdftotext-man.html
 
-If the PDF is an image that isn't indexed, perform optical character recognition. Google's Tesseract is the tool to be used.
+- If the PDF is an image that isn't indexed, perform optical character recognition. Google's Tesseract is the tool to be used.
 
 https://opensource.google.com/projects/tesseract
+
+- This command uses image magick to convert a pdf file to a tiff file.
+
+magick -density 300 2019_0409_122E.pdf -depth 8 -strip -background white -alpha off file.tiff
+
+- Good tutorial on Tesseract: https://medium.freecodecamp.org/getting-started-with-tesseract-part-i-2a6a6b1cf75e
