@@ -107,5 +107,5 @@ venv.bak/
 .vscode/
 
 # images and pdfs
-.pdf
-.png
+*.pdf
+*.png
