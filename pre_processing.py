@@ -5,10 +5,18 @@ Returns:
 """
 
 import os
+import subprocess
+import sys
 import cv2
 import numpy as np
 
-def do_work(img_path):
+# run powershell script, pdf_to_tiff
+p = subprocess.Popen(["powershell.exe",
+                      "C:\\Users\\plog1\\Documents\\Scripts\\CNAmeters\\pdf_to_tiff.ps1"],
+                     stdout=sys.stdout)
+p.communicate()
+
+def tiff_png(img_path):
     """[Takes a raw image, processes it, and saves it to a output path called cleaned_images]
 
     Arguments:
@@ -44,5 +52,7 @@ def do_work(img_path):
     # save the filtered image in the output directory
     save_path = os.path.join(output_path, file_name + ".png")
     cv2.imwrite(save_path, img)
+    os.remove(img_path)
 
-do_work('C:\\Users\\plog1\\Documents\\Scripts\\CNAmeters\\file.tiff')
+for f in os.listdir('cleaned_images'):
+    tiff_png(f'C:\\Users\\plog1\\Documents\\Scripts\\CNAmeters\\cleaned_images\\{f}')
