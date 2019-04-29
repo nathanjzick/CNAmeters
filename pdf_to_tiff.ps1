@@ -4,12 +4,12 @@ $srcfolder = "C:\\Users\\plog1\\Documents\Scripts\\CNAmeters\\raw_bills\\"
 $destfolder = "C:\\Users\\plog1\\Documents\\Scripts\\CNAmeters\\cleaned_images\\"
 # This ps1 file will add copy files to designated folder
 # Do NOT use Mogrify or the original images will be deleted
-$im_convert_exe = "magick"
+$im_convert_exe = "magick -density 300"
 # change src_filter to the format of the source files
 $src_filter = "*.pdf"
 # change dest_ext to the format of the destination files
 $dest_ext = "tiff"
-$options = "-density 300 -depth 8 -strip -background white -alpha off"
+$options = "-depth 8 -strip -background white -alpha off"
 $logfile = "C:\\Users\\plog1\\Documents\Scripts\\CNAmeters\\convert.log"
 $fp = New-Item -ItemType file $logfile -force
 $count = 0
