@@ -1,7 +1,7 @@
-"""[The preprocessing of an image file along with the saving of the file.]
-
-Returns:
-    [Saved file] -- [Processed image file]
+"""
+   Runs a powershell script to convert original pdfs into tiff files. Tiff files are then converted
+   to png with a Python function. That function also pre-processes the image to maximize tesseract
+   readability.
 """
 
 import os
@@ -17,11 +17,12 @@ p = subprocess.Popen(["powershell.exe",
 p.communicate()
 
 def tiff_png(img_path):
-    """[Takes a raw image, processes it, and saves it to a output path called cleaned_images]
+    """Takes a raw tiff image, processes it, and saves it as a png file ready to be analyzed.
 
     Arguments:
-        img_path {[file path 'string']} -- [This is the original image that will be processed]
+        img_path {file path 'string'} -- This is the tiff file produced from the powershell script.
     """
+
     # read image using opencv
     img = cv2.imread(img_path)
 
