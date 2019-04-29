@@ -105,6 +105,7 @@ venv.bak/
 
 # vs code stuff
 .vscode/
+tempCodeRunnerFile.py
 
 # images and pdfs
 *.pdf
