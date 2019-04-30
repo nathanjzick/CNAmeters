@@ -18,7 +18,7 @@ foreach ($srcitem in $(Get-ChildItem $srcfolder -include $src_filter -recurse))
     $srcname = $srcitem.fullname
 
     # Construct the filename and filepath for the output
-    $partial = $srcitem.FullName.Substring( $srcitem.FullName.Length - 18, 18 )
+    $partial = $srcitem.FullName.Substring( $srcitem.FullName.Length - 26, 26 )
     $destname = $destfolder + $partial
     $destname= [System.IO.Path]::ChangeExtension( $destname , $dest_ext )
     $destpath = [System.IO.Path]::GetDirectoryName( $destname )
