@@ -20,7 +20,7 @@ foreach ($srcitem in $(Get-ChildItem $srcfolder -include $src_filter -recurse))
     # Construct the filename and filepath for the output
     $partial = $srcitem.FullName.Substring( $srcitem.FullName.Length - 26, 26 )
     $destname = $destfolder + $partial
-    $destname= [System.IO.Path]::ChangeExtension( $destname , $dest_ext )
+    $destname = [System.IO.Path]::ChangeExtension( $destname , $dest_ext )
     $destpath = [System.IO.Path]::GetDirectoryName( $destname )
 
     # Create the destination path if it does not exist
@@ -43,5 +43,5 @@ foreach ($srcitem in $(Get-ChildItem $srcfolder -include $src_filter -recurse))
     # Write-Output $info
     Add-Content $fp $info
 
-    $count=$count+1
+    $count = $count + 1
 }
